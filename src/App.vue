@@ -1,28 +1,18 @@
 <template>
-    <div>
-        <h1>{{title}}</h1>
-        <p>{{count}}</p>
-        <button @click="count++">btn</button>
-        <HomeComponent/>
-        <StatusComponent/>
-    </div>
+  <v-app>
+    <v-content>
+      <User/>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import HomeComponent from './Home'
-import Home from "./views/Home";
+import User from "./components/User"
 
 export default {
-    name: 'App',
-    components: {
-      Home,
-      HomeComponent
-    },
-    data () {
-        return {
-            title: '하이',
-            count: 1
-        }
-    }
+  name: "App",
+  components: {
+    User
+  }
 }
 </script>
