@@ -1,11 +1,17 @@
 <template>
   <div class="blue lighten-3 pa-3">
     <h1>User 컴포넌트</h1>
-    <p>이름: 뷰제이에스</p>
+    <p>이름: {{name}}</p>
+    <v-btn color="success" @click="changeName()">이름 변경</v-btn>
     <hr>
     <v-layout row wrap>
       <v-flex xs12 sm6>
-        <UserDetail></UserDetail>
+        <UserDetail
+                :name="name"
+                :address="address"
+                :phone="phone"
+                :hasDog="hasDog"
+        />
       </v-flex>
       <v-flex xs12 sm6>
         <UserEdit></UserEdit>
@@ -22,6 +28,19 @@ export default {
   components: {
     UserDetail,
     UserEdit
+  },
+  data() {
+    return {
+      name: 'chanpong vuejs',
+      address: '테스트동',
+      phone: '010-1234-1234',
+      hasDog: true
+    }
+  },
+  methods: {
+    changeName() {
+      this.name = "ChanPong"
+    }
   }
 }
 </script>
