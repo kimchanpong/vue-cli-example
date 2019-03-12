@@ -14,7 +14,13 @@
         />
       </v-flex>
       <v-flex xs12 sm6>
-        <UserEdit></UserEdit>
+        <UserEdit
+                :name="name"
+                :address="address"
+                :phone="phone"
+                :hasDog="hasDog"
+                @child="parents"
+        />
       </v-flex>
     </v-layout>
   </div>
@@ -40,6 +46,13 @@ export default {
   methods: {
     changeName() {
       this.name = "ChanPong"
+    },
+    parents(user) {
+      this.name = user.name;
+      this.address = user.address;
+      this.phone = user.phone;
+      this.hasDog = user.hasDog;
+      console.log('parent!!');
     }
   }
 }
